@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 #Added manually gems
 gem 'sorcery'
 gem 'mysql2'
+ruby '2.4.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
