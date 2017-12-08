@@ -4,56 +4,32 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password: jchs1111
+  adapter: postgresql
   host: localhost
+  username: pguser
+  password: pguser_password
 
 development:
-  adapter: mysql2
-  host: 127.0.0.1
-  encoding: utf8
-  reconnect: false
-  database: timeToInspire_development
-  pool: 5
-  username: root
-  password: jchs1111
-  #socket: /opt/local/var/run/mysqld/mysqld.sock
-  socket: /run/mysqld/mysqld.sock
+  <<: *default
+  database: db_development
+  host: localhost
+  username: pguser
+  password: 12345678
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-# test:
-#   <<: *default
-#   database: db/test.sqlite3
-#
-# production:
-#   <<: *default
-#   database: db/production.sqlite3
-
 test:
-  adapter: mysql2
-  host: 127.0.0.1
-  encoding: utf8
-  reconnect: false
-  database: timeToInspire_test
-  pool: 5
-  username: root
-  password: jchs1111
-  #socket: /opt/local/var/run/mysqld/mysqld.sock
-  socket: /run/mysqld/mysqld.sock
+  <<: *default
+  database: db_test
+  host: localhost
+  username: pguser
+  password: 12345678
 
 production:
   <<: *default
-  database: ENV['DATABASE_URL']
-  username: ENV['CLEARDB_DATABASE_USERNAME']
-  password: ENV['CLEARDB_DATABASE_PASSWORDs']
+  database: db_production
+  host: localhost
+  username: pguser
+  password: 12345678

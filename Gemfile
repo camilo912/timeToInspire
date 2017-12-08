@@ -21,7 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 #Added manually gems
 gem 'sorcery'
-gem 'mysql2'
+#gem 'mysql2'
+gem 'pg'
 ruby '2.4.1'
 
 # Use CoffeeScript for .coffee assets and views
