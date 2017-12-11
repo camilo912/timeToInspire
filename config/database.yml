@@ -8,7 +8,7 @@ default: &default
   adapter: postgresql
   #host: 127.0.0.1
   username: pguser
-  password: pguser_password
+  password: 12345678
 
 development:
   <<: *default

@@ -4,6 +4,7 @@
   <strong>Username:</strong>
   <%= @user.email %>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if current_user != nil and current_user.email == @user.email %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'Back', :back %>
